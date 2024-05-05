@@ -18,7 +18,8 @@ public class EmbedTomcatServletMain {
 
         Context context = tomcat.addContext("", "/");
         tomcat.addServlet("", "helloServlet", new HelloServlet());
-        context.addServletMappingDecoded("/hello-spring", "helloServlet");
+        // 서블릿 경로 매핑
+        context.addServletMappingDecoded("/hello-servlet", "helloServlet");
         tomcat.start();
     }
 }
