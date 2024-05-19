@@ -5,7 +5,6 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HandlesTypes;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
 // 아래 어노테이션을 통하여 Set<Class<?>> c에 AppInit 의 구현체가 딸려옴
