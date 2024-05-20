@@ -1,6 +1,8 @@
 plugins {
+    // 스프링 부트 3.0.2에 맞는 라이브러리들을 제공
     id 'org.springframework.boot' version '3.0.2'
-    //id 'io.spring.dependency-management' version '1.1.0'
+    // 버전 자동 관리 라이브러리
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
 }
 
@@ -9,7 +11,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 //스프링 부트 외부 라이브러리 버전 변경
-//ext['tomcat.version']='10.1.4'
+ext['tomcat.version']='10.1.4'
 
 configurations {
     compileOnly {
@@ -24,6 +26,7 @@ repositories {
 
 dependencies {
 
+    /*
     //1. 라이브러리 직접 지정
     //스프링 웹 MVC
     implementation 'org.springframework:spring-webmvc:6.0.4'
@@ -41,8 +44,9 @@ dependencies {
     //YML 관련
     implementation 'org.yaml:snakeyaml:1.33'
     testImplementation 'junit:junit:4.13.1'
+*/
 
-/*
+    /*
     //2. 스프링 부트 라이브러리 버전 관리
     //스프링 웹, MVC
     implementation 'org.springframework:spring-webmvc'
@@ -61,10 +65,10 @@ dependencies {
     implementation 'org.yaml:snakeyaml'
 */
 
-/*
-    //3. 스프링 부트 스타터
+
+    //3. 스프링 부트 스타터 ( 하나로서 웹에 기초적인 모든 라이브러리 적용 가능 )
     implementation 'org.springframework.boot:spring-boot-starter-web'
-*/
+
 }
 
 tasks.named('test') {
