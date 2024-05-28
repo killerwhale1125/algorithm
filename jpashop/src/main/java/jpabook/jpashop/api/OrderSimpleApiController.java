@@ -40,11 +40,6 @@ public class OrderSimpleApiController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/api/v4/simple-orders")
-    public List<SimpleOrderDTO> orderV4() {
-        return orderRepository.findOrderDtos();
-    }
-
     @Data
     static class SimpleOrderDTO {
         private Long orderId;
