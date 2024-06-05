@@ -54,4 +54,9 @@ class MemberRepositoryTest {
     public void findMemberLazy() {
 
     }
+
+    @Test
+    public void callCustom() {
+        List<Member> memberCustom = memberRepository.findMemberCustom();
+    }
 }
