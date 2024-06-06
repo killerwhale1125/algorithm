@@ -21,6 +21,7 @@ public class Review {
             broken[Integer.parseInt(st.nextToken())] = true;
         }
 
+        // 다 고장났을 경우 대비
         int result = Math.abs(N - 100);
 
         for(int i=0; i<1000000; i++) {
