@@ -6,6 +6,8 @@ management:
       enabled: true
     env:
       enabled: true
+#  server:
+#    port: 9292
   endpoint:
     shutdown:
       enabled: true
@@ -21,3 +23,7 @@ info:
   app:
     name: hello-actuator
     company: yh
+
+logging:
+  level:
+    hello.controller: debug
