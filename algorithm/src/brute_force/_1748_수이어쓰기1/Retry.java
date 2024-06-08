@@ -7,10 +7,25 @@ import java.io.InputStreamReader;
 public class Retry {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String N = br.readLine();
+        int N = Integer.parseInt(br.readLine());
 
-        for(int i=1; i<=N.length(); i++) {
+        int count = 0;
+        int start = 1;
+        int end = 9;
+        int digit = 1;
 
+        while(true) {
+            if(N>=start + end - 1) {
+                count += end * digit;
+                digit++;
+                start *= 10;
+                end *= 10;
+            } else {
+                count += (N - start + 1) * digit;
+                break;
+            }
         }
+
+        System.out.println(count);
     }
 }
