@@ -2,23 +2,29 @@ package study.querydsl;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
+import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.PersistenceUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
+import study.querydsl.dto.MemberDto;
+import study.querydsl.dto.QMemberDto;
 import study.querydsl.entity.Member;
-import study.querydsl.entity.QTeam;
+import study.querydsl.entity.QMember;
 import study.querydsl.entity.Team;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static study.querydsl.entity.QMember.member;
-import static study.querydsl.entity.QTeam.*;
+import static study.querydsl.entity.QTeam.team;
 
 @SpringBootTest
 @Transactional
@@ -89,7 +95,7 @@ public class QuerydslBasicTest {
                 .selectFrom(member)
                 .fetchOne();
 
-        // limit 1 
+        // limit 1
         Member fetchFirst = queryFactory
                 .selectFrom(member)
                 .fetchFirst();
@@ -172,7 +178,7 @@ public class QuerydslBasicTest {
 
     /**
      * 팀 이름과 각 팀의 평균 연령을 구해라
-     * 
+     *
      */
     @Test
     void group() throws Exception {
@@ -222,9 +228,120 @@ public class QuerydslBasicTest {
                 .from(member, team)
                 .where(member.username.eq(team.name))
                 .fetch();
+        for (Member member1 : result) {
+            System.out.println("member1 = " + member1);
+        }
 
         assertThat(result)
                 .extracting("username")
                 .containsExactly("teamA", "teamB");
+    }
+
+    /**
+     * select m, t from Member m left join m.team t on t.name = 'teamA'
+     */
+    @DisplayName("회원과 팀 조인하면서 팀 이름이 teamA인 팀만 조인, 회원은 모두 조회")
+    @Test
+    void join_on_filtering() throws Exception {
+        List<Tuple> result = queryFactory
+                .select(member, team)
+                .from(member)
+                .innerJoin(member.team, team).on(team.name.eq("teamA"))
+                .fetch();
+
+        for (Tuple tuple : result) {
+            System.out.println("tuple = " + tuple);
+        }
+    }
+
+    /**
+     * 연관관계 없는 엔티티 외부 조인
+     * 회원이름과 팀이름이 같은 대상을 외부조인
+     */
+    @DisplayName("세타 조인 테스트")
+    @Test
+    void join_on_no_relation() throws Exception {
+        em.persist(new Member("teamA"));
+        em.persist(new Member("teamB"));
+
+        List<Tuple> result = queryFactory
+                .select(member, team)
+                .from(member)
+                .leftJoin(team).on(member.username.eq(team.name))
+                .fetch();
+
+        for (Tuple tuple : result) {
+            System.out.println("tuple = " + tuple);
+        }
+    }
+
+    @PersistenceUnit
+    EntityManagerFactory emf;
+
+    @Test
+    public void fetchJoinNo() {
+        em.flush();
+        em.clear();
+
+        Member findMember = queryFactory
+                .selectFrom(member)
+                .where(member.username.eq("member1"))
+                .fetchOne();
+        boolean loaded = emf.getPersistenceUnitUtil().isLoaded(findMember.getTeam());
+    }
+
+    @DisplayName("나이가 가장 많은 회원 조회 -> SubQuery")
+    @Test
+    void subQuery() throws Exception {
+
+        QMember memberSub = new QMember("memberSub");
+
+        List<Member> result = queryFactory
+                .selectFrom(member)
+                .where(member.age.eq(JPAExpressions.select(memberSub.age.max()).from(memberSub)))
+                .fetch();
+    }
+
+    @DisplayName("")
+    @Test
+    void basicCase() throws Exception {
+        List<String> result = queryFactory
+                .select(member.age
+                        .when(10).then("열살")
+                        .when(20).then("스무살")
+                        .otherwise("기타"))
+                .from(member)
+                .fetch();
+
+        for (String s : result) {
+            System.out.println("s = " + s);
+        }
+    }
+
+    @DisplayName("문자 더하기")
+    @Test
+    void concat() throws Exception {
+        List<String> result = queryFactory
+                .select(member.username.concat("_").concat(member.age.stringValue()))
+                .from(member)
+                .where(member.username.eq("member1"))
+                .fetch();
+
+        for (String s : result) {
+            System.out.println("s = " + s);
+        }
+    }
+
+    @DisplayName("쿼리 프로젝션")
+    @Test
+    void findDtoByQueryProjection() throws Exception {
+        List<MemberDto> fetch = queryFactory
+                .select(new QMemberDto(member.username, member.age))
+                .from(member)
+                .fetch();
+
+        for (MemberDto memberDto : fetch) {
+            System.out.println("memberDto = " + memberDto);
+        }
     }
 }

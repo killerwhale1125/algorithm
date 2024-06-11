@@ -2,7 +2,6 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.0'
 	id 'io.spring.dependency-management' version '1.1.5'
-	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
 group = 'study'
@@ -22,10 +21,6 @@ repositories {
 	mavenCentral()
 }
 
-ext {
-	set('querydsl.version', '5.0.0')
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -41,7 +36,7 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
 
-	//Querydsl 추가
+	// Querydsl 추가
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
 	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
 	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
@@ -52,20 +47,3 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
-//querydsl 추가 시작
-def querydslDir = "$buildDir/generated/querydsl"
-querydsl {
-	jpa = true
-	querydslSourcesDir = querydslDir
-}
-sourceSets {
-	main.java.srcDir querydslDir
-}
-configurations {
-	querydsl.extendsFrom compileClasspath
-}
-compileQuerydsl {
-	options.annotationProcessorPath = configurations.querydsl
-}
-//querydsl 추가 끝
