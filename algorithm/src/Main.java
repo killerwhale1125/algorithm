@@ -1,22 +1,34 @@
+class Parent {
+    int x = 100;
+
+    Parent() {
+        this(500);  // Parent(int x) 생성자 호출
+    }
+
+    Parent(int x) {
+        this.x = x;
+    }
+
+    int getX() {
+        return x;
+    }
+}
+
+class Child extends Parent {
+    int x = 4000;
+
+    Child() {
+        this(5000);  // Child(int x) 생성자 호출
+    }
+
+    Child(int x) {
+        this.x = x;
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        Parent obj = new Child();
-        System.out.print(obj.compute(7));
-    }
-
-    static class Parent {
-        int compute(int num) {
-            if (num <= 1)
-                return num;
-            return compute(num - 1) + compute(num - 2);
-        }
-    }
-
-    static class Child extends Parent {
-        int compute(int num) {
-            if (num <= 1)
-                return num;
-            return compute(num - 1) + compute(num - 3);
-        }
+        Child obj = new Child();
+        System.out.println(obj.getX());
     }
 }
