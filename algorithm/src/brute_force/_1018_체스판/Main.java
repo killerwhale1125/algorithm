@@ -18,8 +18,6 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static char[][] board;
-    public static int[] dx = {0, 1, 0, 1};
-    public static int[] dy = {0, 0, 1, 1};
     public static int min = Integer.MAX_VALUE;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

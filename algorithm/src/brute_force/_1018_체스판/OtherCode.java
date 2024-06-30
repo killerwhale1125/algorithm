@@ -29,7 +29,6 @@ public class OtherCode {
 
         arr = new boolean[N][M];
 
-
         // 배열 입력
         for (int i = 0; i < N; i++) {
             String str = br.readLine();
