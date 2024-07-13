@@ -1,43 +1,7 @@
 package greedy._2212_센서;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
-import java.util.stream.IntStream;
-
-/**
- * 1 3 6 7 9 가 있다면
- * 이 거리간의 합을 배열로 따로 저장해서
- * 정렬 후 가장 큰 값부터 빼는 것이 정답.
- */
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int K = Integer.parseInt(br.readLine());
-        if(K >= N) {
-            System.out.println(0);
-            return;
-        }
-        int[] sensor = new int[N];
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        IntStream.range(0, N)
-                .forEach(o -> sensor[o] = Integer.parseInt(st.nextToken()));
+    public static void main(String[] args) {
 
-        Arrays.sort(sensor);
-
-        int[] diff = new int[N-1];
-        IntStream.range(1, N)
-                .forEach(o -> diff[o-1] = sensor[o] - sensor[o-1]);
-
-        Arrays.sort(diff);
-
-        int sum = Arrays.stream(diff).sum();
-        for(int i=0; i<K-1; i++) {
-            sum -= diff[diff.length-1-i];
-        }
-        System.out.println(sum);
     }
 }
