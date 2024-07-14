@@ -1,4 +1,4 @@
-package greedy._1700_멀티탭스케줄링;
+package 백준.greedy._1700_멀티탭스케줄링;
 
 import java.util.*;
 

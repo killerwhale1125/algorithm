@@ -1,4 +1,4 @@
-package brute_force._1018_체스판;
+package 백준.brute_force._1018_체스판;
 
 import java.io.BufferedReader;
 import java.io.IOException;

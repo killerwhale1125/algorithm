@@ -1,4 +1,4 @@
-package devide_conquer._2447_별찍기;
+package 백준.devide_conquer._2447_별찍기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

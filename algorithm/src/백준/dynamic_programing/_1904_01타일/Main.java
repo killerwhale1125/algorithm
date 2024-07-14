@@ -1,4 +1,4 @@
-package dynamic_programing._1904_01타일;
+package 백준.dynamic_programing._1904_01타일;
 
 import java.io.BufferedReader;
 import java.io.IOException;

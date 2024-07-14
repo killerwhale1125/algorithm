@@ -1,4 +1,4 @@
-package binary_search._2805_나무자르기;
+package 백준.binary_search._2805_나무자르기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

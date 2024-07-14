@@ -1,4 +1,4 @@
-package binary_search._2343_기타레슨;
+package 백준.binary_search._2343_기타레슨;
 
 import java.io.BufferedReader;
 import java.io.IOException;

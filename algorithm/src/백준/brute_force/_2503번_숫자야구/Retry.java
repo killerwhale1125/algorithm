@@ -1,4 +1,4 @@
-package brute_force._2503번_숫자야구;
+package 백준.brute_force._2503번_숫자야구;
 
 import java.io.BufferedReader;
 import java.io.IOException;

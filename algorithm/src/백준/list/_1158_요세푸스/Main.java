@@ -1,4 +1,4 @@
-package list._1158_요세푸스;
+package 백준.list._1158_요세푸스;
 
 import java.io.BufferedReader;
 import java.io.IOException;

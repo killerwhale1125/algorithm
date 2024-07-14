@@ -1,4 +1,4 @@
-package binary_search._2110_공유기설치;
+package 백준.binary_search._2110_공유기설치;
 
 import java.io.BufferedReader;
 import java.io.IOException;

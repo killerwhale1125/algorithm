@@ -1,4 +1,4 @@
-package greedy._2212_센서;
+package 백준.greedy._2212_센서;
 
 import java.io.BufferedReader;
 import java.io.IOException;

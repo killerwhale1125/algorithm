@@ -1,4 +1,4 @@
-package greedy._11000_강의실배정;
+package 백준.greedy._11000_강의실배정;
 
 import java.io.BufferedReader;
 import java.io.IOException;

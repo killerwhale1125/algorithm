@@ -1,4 +1,4 @@
-package brute_force._2231_분해합;
+package 백준.brute_force._2231_분해합;
 
 import java.io.BufferedReader;
 import java.io.IOException;

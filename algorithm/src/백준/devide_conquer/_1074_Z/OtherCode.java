@@ -1,4 +1,4 @@
-package devide_conquer._1074_Z;
+package 백준.devide_conquer._1074_Z;
 
 import java.io.BufferedReader;
 import java.io.IOException;

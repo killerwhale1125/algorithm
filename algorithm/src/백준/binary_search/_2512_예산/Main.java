@@ -1,4 +1,4 @@
-package binary_search._2512_예산;
+package 백준.binary_search._2512_예산;
 
 import java.io.BufferedReader;
 import java.io.IOException;

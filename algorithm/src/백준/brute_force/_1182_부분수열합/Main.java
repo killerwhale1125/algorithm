@@ -1,4 +1,4 @@
-package brute_force._1182_부분수열합;
+package 백준.brute_force._1182_부분수열합;
 
 import java.io.BufferedReader;
 import java.io.IOException;

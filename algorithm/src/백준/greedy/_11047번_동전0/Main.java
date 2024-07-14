@@ -1,4 +1,4 @@
-package greedy._11047번_동전0;
+package 백준.greedy._11047번_동전0;
 
 import java.io.BufferedReader;
 import java.io.IOException;

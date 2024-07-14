@@ -1,4 +1,4 @@
-package list._1406_에디터;
+package 백준.list._1406_에디터;
 
 import java.io.BufferedReader;
 import java.io.IOException;

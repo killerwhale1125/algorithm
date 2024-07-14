@@ -1,4 +1,4 @@
-package brute_force._14500_테트로미노;
+package 백준.brute_force._14500_테트로미노;
 
 import java.io.BufferedReader;
 import java.io.IOException;

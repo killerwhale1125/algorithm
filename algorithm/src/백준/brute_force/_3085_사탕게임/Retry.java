@@ -1,4 +1,4 @@
-package brute_force._3085_사탕게임;
+package 백준.brute_force._3085_사탕게임;
 
 import java.io.BufferedReader;
 import java.io.IOException;

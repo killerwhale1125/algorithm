@@ -1,4 +1,4 @@
-package devide_conquer._1992_쿼드트리;
+package 백준.devide_conquer._1992_쿼드트리;
 
 import java.io.BufferedReader;
 import java.io.IOException;

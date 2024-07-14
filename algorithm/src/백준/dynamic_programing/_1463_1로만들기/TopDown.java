@@ -1,4 +1,4 @@
-package dynamic_programing._1463_1로만들기;
+package 백준.dynamic_programing._1463_1로만들기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

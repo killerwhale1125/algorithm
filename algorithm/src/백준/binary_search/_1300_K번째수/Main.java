@@ -1,4 +1,4 @@
-package binary_search._1300_K번째수;
+package 백준.binary_search._1300_K번째수;
 
 import java.io.BufferedReader;
 import java.io.IOException;

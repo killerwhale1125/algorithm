@@ -1,4 +1,4 @@
-package greedy.개미군단;
+package 백준.greedy.개미군단;
 
 public class SolidAnt extends Ant {
     public SolidAnt(String type) {

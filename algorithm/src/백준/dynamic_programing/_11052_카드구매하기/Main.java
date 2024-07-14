@@ -1,4 +1,4 @@
-package dynamic_programing._11052_카드구매하기;
+package 백준.dynamic_programing._11052_카드구매하기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

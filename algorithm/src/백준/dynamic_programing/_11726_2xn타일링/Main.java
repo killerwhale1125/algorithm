@@ -1,4 +1,4 @@
-package dynamic_programing._11726_2xn타일링;
+package 백준.dynamic_programing._11726_2xn타일링;
 
 import java.io.BufferedReader;
 import java.io.IOException;

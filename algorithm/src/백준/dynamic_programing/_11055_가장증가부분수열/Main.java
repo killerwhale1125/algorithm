@@ -1,4 +1,4 @@
-package dynamic_programing._11055_가장증가부분수열;
+package 백준.dynamic_programing._11055_가장증가부분수열;
 
 import java.io.BufferedReader;
 import java.io.IOException;

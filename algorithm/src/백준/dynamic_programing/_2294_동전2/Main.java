@@ -1,4 +1,4 @@
-package dynamic_programing._2294_동전2;
+package 백준.dynamic_programing._2294_동전2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

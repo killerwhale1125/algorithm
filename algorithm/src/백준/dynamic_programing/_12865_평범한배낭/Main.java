@@ -1,4 +1,4 @@
-package dynamic_programing._12865_평범한배낭;
+package 백준.dynamic_programing._12865_평범한배낭;
 
 import java.io.BufferedReader;
 import java.io.IOException;

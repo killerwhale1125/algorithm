@@ -1,4 +1,4 @@
-package list._5397_키로거;
+package 백준.list._5397_키로거;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package brute_force._1107_리모컨;
+package 백준.brute_force._1107_리모컨;
 
 import java.io.BufferedReader;
 import java.io.IOException;

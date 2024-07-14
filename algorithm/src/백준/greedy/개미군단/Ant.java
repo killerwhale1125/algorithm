@@ -1,4 +1,4 @@
-package greedy.개미군단;
+package 백준.greedy.개미군단;
 
 public abstract class Ant {
     private int power;

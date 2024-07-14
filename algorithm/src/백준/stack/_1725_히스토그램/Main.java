@@ -1,4 +1,4 @@
-package stack._1725_히스토그램;
+package 백준.stack._1725_히스토그램;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package brute_force._1748_수이어쓰기1;
+package 백준.brute_force._1748_수이어쓰기1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

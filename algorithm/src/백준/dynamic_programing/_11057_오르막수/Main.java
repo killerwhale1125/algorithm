@@ -1,4 +1,4 @@
-package dynamic_programing._11057_오르막수;
+package 백준.dynamic_programing._11057_오르막수;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package dynamic_programing._1699_제곱수합;
+package 백준.dynamic_programing._1699_제곱수합;
 
 import java.io.*;
 

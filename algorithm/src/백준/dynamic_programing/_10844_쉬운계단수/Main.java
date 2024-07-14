@@ -1,4 +1,4 @@
-package dynamic_programing._10844_쉬운계단수;
+package 백준.dynamic_programing._10844_쉬운계단수;
 
 import java.io.BufferedReader;
 import java.io.IOException;

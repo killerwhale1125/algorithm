@@ -1,4 +1,4 @@
-package greedy._13904_과제;
+package 백준.greedy._13904_과제;
 
 import java.io.BufferedReader;
 import java.io.IOException;

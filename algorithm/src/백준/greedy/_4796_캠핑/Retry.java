@@ -1,4 +1,4 @@
-package greedy._4796_캠핑;
+package 백준.greedy._4796_캠핑;
 
 import java.io.BufferedReader;
 import java.io.IOException;

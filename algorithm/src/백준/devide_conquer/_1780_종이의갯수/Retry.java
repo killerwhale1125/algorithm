@@ -1,4 +1,4 @@
-package devide_conquer._1780_종이의갯수;
+package 백준.devide_conquer._1780_종이의갯수;
 
 import java.io.BufferedReader;
 import java.io.IOException;

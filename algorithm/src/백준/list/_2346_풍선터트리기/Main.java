@@ -1,4 +1,4 @@
-package list._2346_풍선터트리기;
+package 백준.list._2346_풍선터트리기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

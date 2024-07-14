@@ -1,4 +1,4 @@
-package brute_force._1476_날짜계산;
+package 백준.brute_force._1476_날짜계산;
 
 import java.io.BufferedReader;
 import java.io.IOException;

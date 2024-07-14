@@ -1,4 +1,4 @@
-package dynamic_programing._9465_스티커;
+package 백준.dynamic_programing._9465_스티커;
 
 import java.io.*;
 import java.util.StringTokenizer;

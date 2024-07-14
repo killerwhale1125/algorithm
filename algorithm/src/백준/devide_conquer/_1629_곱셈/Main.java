@@ -1,4 +1,4 @@
-package devide_conquer._1629_곱셈;
+package 백준.devide_conquer._1629_곱셈;
 
 import java.io.BufferedReader;
 import java.io.IOException;
