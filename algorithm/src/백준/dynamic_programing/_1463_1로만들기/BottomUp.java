@@ -11,7 +11,7 @@ public class BottomUp {
         int dp[] = new int[N+1];
 
         dp[0] = 0;
-        dp[1] = 1;
+        dp[1] = 0;
 
         for(int i=2; i<=N; i++) {
             dp[i] = dp[i-1] + 1;

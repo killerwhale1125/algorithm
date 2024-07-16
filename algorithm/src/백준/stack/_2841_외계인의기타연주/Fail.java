@@ -11,9 +11,11 @@ import java.util.*;
  * if(stack.contains(x)) continue; 이 부분에서 contains를 사용하면
  * 시간 복잡도는 O(N) 이 발생한다.
  * 또한 삭제 작업에서도 문제가 발생한다.
+ * 처음에 문제를 이해했던 방식은 만약 5 7을 누르고있는 상황에서 5번을 눌러야한다면 그냥 패스해도 되는 줄알았다.
+ * 하지만 이런 경우에도 7을 빼고 눌러야한다.
  */
 
-public class Main {
+public class Fail {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");

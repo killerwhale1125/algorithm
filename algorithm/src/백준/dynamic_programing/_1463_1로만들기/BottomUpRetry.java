@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * 오답 : 1을 1로만들려면 1이 아니라 0이다.
  */
-public class BottomUpdd {
+public class BottomUpRetry {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
