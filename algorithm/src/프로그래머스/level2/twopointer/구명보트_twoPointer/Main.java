@@ -1,4 +1,4 @@
-package 프로그래머스.level2.구명보트_twoPointer;
+package 프로그래머스.level2.twopointer.구명보트_twoPointer;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package 프로그래머스.level2.최솟값만들기;
+package 프로그래머스.level2.math.최솟값만들기;
 
 import java.util.Arrays;
 
