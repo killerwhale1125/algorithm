@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 보트는 무조건 2명밖에 못탐
+ * 그래서 정렬 후 첫번째 가벼운애랑 제일 무거운 마지막 놈이랑 더해서 limit이 안넘는게 가장 효율적인 식이다.
  */
 public class Main {
     public static void main(String[] args) {

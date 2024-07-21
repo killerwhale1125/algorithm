@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 우선 정렬 후 Map으로 중복되는 값을 걸러낸 후
+ * 그 key의 value값을 배열에 저장하여 배열 끝에서부터 K 인 원하는 수와 비교하며 값에 충족할 경우 정답
+ */
 public class Main {
     public static void main(String[] args) {
         int[] tangerine = {1, 3, 2, 5, 4, 5, 2, 3};

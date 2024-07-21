@@ -1,5 +1,8 @@
 package 프로그래머스.level2.bruteforce.카펫;
 
+/**
+ * 노란색 기준으로 계산해서 겉에 bronw 갯수랑 일치하면 정답
+ */
 public class Main {
     public static void main(String[] args) {
         int[] answer = new int[2];
