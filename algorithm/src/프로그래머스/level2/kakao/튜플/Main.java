@@ -7,7 +7,6 @@ import static java.util.Comparator.*;
 public class Main {
     public static void main(String[] args) {
         String s = "{{1,2,3},{2,1},{1,2,4,3},{2}}";
-
         List<ArrayList<Integer>> list = new ArrayList<>();
         for(int i=0; i<100001; i++) {
             list.add(new ArrayList<>());
