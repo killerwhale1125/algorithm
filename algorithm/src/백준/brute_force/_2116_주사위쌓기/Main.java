@@ -27,7 +27,7 @@ public class Main {
                 dices[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        // index가 0일 땐 F 이런식
+
         int nextIndex = 1;
         for(int i=0; i<6; i++) {
             int max = searchMaxNumber(0, getOppositeIndex(i), dices[0][i]);
