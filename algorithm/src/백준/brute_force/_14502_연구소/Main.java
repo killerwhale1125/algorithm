@@ -4,9 +4,13 @@ import java.io.*;
 import java.util.*;
 
 /**
- * 깊은 복사 
- * 얕은 복사
+ * 깊은 복사 ( 완전히 새로이 복사 )
+ * 얕은 복사 ( 참조 -> 값이 바뀌면 다바뀜 )
  * 이 문제로 인하여 max값이 자꾸 0으로 나옴
+ *
+ * 1. 전체 board에서 0을 1로 3개만 바꾼다.
+ * 2. 1을 3개로 바꿨을 때 바이러스를 전파시킨다.
+ * 3. 0의 갯수를 max에 저장하여 비교한다.
  */
 public class Main {
     public static int N;
