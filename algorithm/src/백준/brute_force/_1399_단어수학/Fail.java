@@ -19,6 +19,10 @@ public class Fail {
             }
         }
 
+        /**
+         * 길이가 긴것이 우선순위 높음.
+         * 같을 경우 문자 내 같은것이 많은 것이 우선순위 높음
+         */
         Arrays.sort(words, (o1, o2) -> {
             if (o2.length() == o1.length())
                 return countAlphabetEq(o2) - countAlphabetEq(o1);
