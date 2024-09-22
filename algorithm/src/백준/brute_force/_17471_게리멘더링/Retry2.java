@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Retry {
+public class Retry2 {
     static List<Integer>[] adjList; // 인접 리스트
     static int[] people; // 각 구역의 인구 수
     static boolean[] selected; // 구역 선택 여부
@@ -45,75 +45,31 @@ public class Retry {
             }
         }
 
-        devide(1);
-
-        System.out.println(min == Integer.MAX_VALUE ? -1 : min);
+        divide_twoPlace(1);
     }
 
-    private static void devide(int index) {
-        if (index == N + 1) {
+    private static void divide_twoPlace(int index) {
+
+        if(index == N + 1) {
             if(isValid()) {
-                int sumA = 0, sumB = 0;
-                for (int i = 1; i <= N; i++) {
-                    if (selected[i] == A) {
-                        sumA += people[i];
-                    } else {
-                        sumB += people[i];
-                    }
-                }
-                min = Math.min(min, Math.abs(sumA - sumB));
+
             }
-            return;
         }
 
         selected[index] = A;
-        devide(index + 1);
+        divide_twoPlace(index + 1);
 
         selected[index] = B;
-        devide(index + 1);
+        divide_twoPlace(index + 1);
     }
 
     private static boolean isValid() {
         boolean[] visited = new boolean[N + 1];
 
-        for (int i=1; i<=N; i++) {
-            if (selected[i] == A) {
-                dfs(i, A, visited);
-                break;
-            }
-        }
-
         for(int i=1; i<=N; i++) {
-            if (selected[i] == B) {
-                dfs(i, B, visited);
-                break;
-            }
+            
         }
 
-        int countA = 0, countB = 0;
-
-        for(int i=1; i<=N; i++) {
-            if (selected[i] == A) {
-                countA++;
-                if (visited[i] == B) return false;
-            }
-
-            if (selected[i] == B) {
-                countB++;
-                if (visited[i] == A) return false;
-            }
-        }
-
-        return countA > 0 && countB > 0;
+        return false;
     }
-
-    private static void dfs(int index, boolean type, boolean[] visited) {
-        visited[index] = true;
-        for (int x : adjList[index]) {
-            if (!visited[x] && selected[x] == type) {
-                dfs(x, type, visited);
-            }
-        }
-    }
-
 }

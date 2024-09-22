@@ -79,14 +79,15 @@ public class Main {
         boolean[] visited = new boolean[N + 1];
         int countA = 0, countB = 0;
 
-        // 구역 A의 연결성 확인
+        // 구역 A의 연결성 및 방문 확인
         for (int i = 1; i <= N; i++) {
             if (selected[i]) {
                 dfs(i, true, visited);
                 break;
             }
         }
-        // 구역 B의 연결성 확인
+
+        // 구역 B의 연결성 및 방문 확인
         for (int i = 1; i <= N; i++) {
             if (!selected[i]) {
                 dfs(i, false, visited);
