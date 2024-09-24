@@ -16,9 +16,11 @@ public class Review {
         N = Integer.parseInt(br.readLine());
         M = Integer.parseInt(br.readLine());
 
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        for(int i=0; i<M; i++) {
-            broken[Integer.parseInt(st.nextToken())] = true;
+        if (M > 0) {  // 고장난 버튼이 있을 때만 처리
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            for (int i = 0; i < M; i++) {
+                broken[Integer.parseInt(st.nextToken())] = true;  // 고장난 버튼 표시
+            }
         }
 
         // 다 고장났을 경우 대비

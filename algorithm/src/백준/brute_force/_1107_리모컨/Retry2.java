@@ -20,10 +20,11 @@ public class Retry2 {
 
         int M = parseInt(br.readLine());
         broken = new boolean[10];
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
-        for(int i=0; i<M; i++) {
-            broken[parseInt(st.nextToken())] = true;
+        if (M > 0) {  // 고장난 버튼이 있을 때만 처리
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            for (int i = 0; i < M; i++) {
+                broken[Integer.parseInt(st.nextToken())] = true;  // 고장난 버튼 표시
+            }
         }
 
         /**
@@ -38,6 +39,8 @@ public class Retry2 {
                 /**
                  * i번을 직접 눌렀을 때 몇번의 +나 -를 통하여 N 채널에 이동할 수 있는지?
                  * i가 N보다 커질경우 절댓값 변환
+                 * Math.abs(N - i) -> + - 버튼 누르는 횟수
+                 * count -> 번호를 직접 누른 횟수
                  */
                 MIN = Math.min(MIN, Math.abs(N - i) + count);
             }
@@ -47,11 +50,8 @@ public class Retry2 {
 
     private static int checkBrokenButton(int button) {
         if(button == 0) {
-            if(broken[button]) {
-                return 0;
-            } else {
-                return 1;
-            }
+            if(broken[button]) return 0;
+            else return 1;
         }
 
         int count = 0;

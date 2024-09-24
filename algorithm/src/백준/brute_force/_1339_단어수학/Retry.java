@@ -1,4 +1,4 @@
-package 백준.brute_force._1399_단어수학;
+package 백준.brute_force._1339_단어수학;
 
 import java.io.BufferedReader;
 import java.io.IOException;
