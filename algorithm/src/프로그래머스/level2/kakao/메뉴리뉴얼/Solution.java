@@ -97,5 +97,4 @@ public class Solution {
         RestaurantOwner shef = new Skarpy();
         return shef.makeUp(orders, course);
     }
-
 }
